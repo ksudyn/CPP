@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 19:37:11 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/07/10 17:25:33 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/07/11 20:23:10 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,27 @@ class Contact
     public:
 		Contact(void);
 		~Contact(void);
-		void Contact:: print_table_contact(void);
-		int	Contact:: check_num_phone(const char *number);
-		void Contact:: print_col(std::string str,  int len_str);
-		void Contact:: print_contact(int i);
-		int	Contact:: dat_contact(int *num_contact);
+		void  print_table_contact(void);
+		int	 check_num_phone(const char *number);
+		void  print_col(std::string str,  int len_str);
+		void  print_contact(int i);
+		int	 dat_contact(int *num_contact);
 };
 //Los atributos son private porque no deben ser modificados directamente desde fuera.
 //Las funciones públicas son la "interfaz" para interactuar con esos datos.
-
 
 //....PhoneBook....//
 class PhoneBook
 {
 	private:
-
+		Contact contact[8];
 	public:
+		int	num_contact;
 
+		PhoneBook(void);
+		~PhoneBook(void);
+
+		int check_command(std::string input);
 };
 
 
@@ -63,3 +67,23 @@ class PhoneBook
 // public:
 //     // funciones que otros pueden usar
 // };
+
+// En relación a las clases, se podrían entender de forma parecida a los struct.
+// Ambos pueden tener funciones y variables internas, así como partes públicas y privadas.
+
+// En una class, si quieres acceder a una variable pública desde main, 
+// necesitas crear primero un objeto de esa clase y luego acceder con el punto (.). 
+// Por ejemplo:
+
+// Contact contacto;
+// contacto.nombre = "Juan";
+
+// Sin embargo, si la variable o función es static y está en la parte pública, 
+// puedes acceder directamente con el nombre de la clase usando :::
+
+// Contact::contador_global = 5;
+// Contact::mostrar_contador();
+
+// Por otro lado, si una función está en la parte privada, 
+// no puedes llamarla directamente desde main. 
+// Solo puede ser usada dentro de la propia clase o por funciones amigas.
