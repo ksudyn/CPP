@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 19:32:09 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/07/11 20:32:50 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/09/10 17:02:14 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ int PhoneBook::check_command(std::string input)
 
 		// Pide al usuario que escriba el índice del contacto a mostrar
 		std::cout << "    Enter index: ";
-		std::getline(std::cin, index);
+		std::getline(std::cin, index);// lees línea del usuario
 
 		// Si el usuario presionó Ctrl+D (EOF), salimos
-		if (std::cin.eof())
+		if (std::cin.eof())//eof() significa end-of-file (fin de fichero).
 		{
 			std::cout << "\nEmpty " << input << std::endl;
 			return (1);
