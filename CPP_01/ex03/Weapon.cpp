@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 19:28:47 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/15 19:58:38 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/09/16 16:05:18 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Weapon::Weapon(std::string typ)
 {
+    type = typ;//guarda el argumento typ en el miembro type
     std::cout << "Weapon Constructor" << std::endl;
 }
 

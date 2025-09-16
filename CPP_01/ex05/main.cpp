@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/12 19:32:26 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/16 15:50:43 by ksudyn           ###   ########.fr       */
+/*   Created: 2025/09/16 19:22:03 by ksudyn            #+#    #+#             */
+/*   Updated: 2025/09/16 19:28:14 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_H
-#define WEAPON_H
+#include "Harl.hpp"
 
-#pragma once//evita que el archivo de cabecera se incluya más de una vez.
-# include "iostream"
+int main() {
+    Harl harl;
 
-class Weapon
-{
-    private:
-        std::string type;
-    public:
-        Weapon(std::string typ);
-        ~Weapon( void );
-        const std::string& getType() const; // devuelve referencia constante
-        void setType(std::string newType);
-};
+    harl.complain("DEBUG");
+    harl.complain("INFO");
+    harl.complain("WARNING");
+    harl.complain("ERROR");
+    harl.complain("SOMETHING ELSE"); // test unknown
 
-#endif
+    return 0;
+}

@@ -6,31 +6,33 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 20:12:07 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/15 20:29:40 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/09/16 16:10:36 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(std::string name): name(name), weapon(nullptr)
 {
-    std::cout << name << "HumanB Constructor" << std::endl;
+    std::cout << name << " HumanB Constructor" << std::endl;
 }
 
 HumanB::~HumanB(void)
 {
-    std::cout << "HumanB Destructor" << std::endl;
+    std::cout << " HumanB Destructor" << std::endl;
 }
 
 void HumanB::setWeapon(Weapon& weapon)
 {
-    this->weapon = weapon;
+    this->weapon = &weapon;
 }
 
 void HumanB::attack() const
 {
     if (weapon)
-        std::cout << this->name << "attacks " << std::endl;
+        std::cout << name << " attacks with their " << weapon->getType() << std::endl;
     else
-        std::cout << " has no weapon" << std::endl;
+        std::cout << name << " has no weapon " << std::endl;
 }
+//weapon->getType() en puntero / weapon.getType() en referencia.
+//sintaxis diferente porque uno es puntero, otro referencia

@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/12 20:11:35 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/16 15:52:50 by ksudyn           ###   ########.fr       */
+/*   Created: 2025/09/16 20:15:51 by ksudyn            #+#    #+#             */
+/*   Updated: 2025/09/16 20:17:47 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_H
-#define HUMANA_H
+#ifndef HARL_H
+#define HARL_H
 
-#pragma once//evita que el archivo de cabecera se incluya más de una vez.
+#pragma once
+#include <string>
+#include <iostream>
 
-#include "iostream"
-#include "Weapon.hpp"
-class HumanA
+class Harl
 {
     private:
-        std::string name;
-        Weapon& weapon;//referencia porque HumanA siempre tendrá arma (no puede ser nullptr)
+        void debug(void);
+        void info(void);
+        void warning(void);
+        void error(void);
     public:
-        HumanA(std::string name, Weapon& weapon);
-        ~HumanA(void);
-        void attack() const;
+        void complain(std::string level);
 };
+
 
 #endif
