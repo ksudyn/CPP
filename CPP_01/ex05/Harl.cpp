@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 19:21:50 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/16 20:09:31 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/09/17 18:28:11 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,3 +80,15 @@ void Harl::complain(std::string level)
 // &Harl::debug = el control remoto de esa acción
 // funcs[] = caja con todos los controles remotos
 // (this->*funcs[i])() = presionar el botón del control remoto para que el robot haga la acción
+
+// string levels[] es un array de 4, en memoria es como una fila 
+// cada indice i se relaciona a un valor "DEBUG", "INFO", "WARNING" o "ERROR"
+// A complain se le pasa un string desde el main y en esta funcion se compara
+// el índice que va aumentando con su valor y el string pasado y
+// si son iguales se llama a la funcion correspondiente 
+// Eso se hace que cada indice con su valor se relaciona con una funcion en su oreden asi
+// &Harl::, mandando la direccion de memoria de la funcion,
+// pero se tiene que especificar a que clase pertenece
+//Por eso debes escribir &Harl::debug para decir “el método debug de la clase Harl”
+// Y por eso se avanza en el bucle con this->*funcs[] y no sin el *
+// Por que el puntero apunta a la direccion de memoria de la funcion

@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 20:15:05 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/16 20:30:16 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/09/17 19:05:35 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
         case DEBUG:
             std::cout << "[ DEBUG ]" << std::endl;
             harl.complain("DEBUG");
-            [[fallthrough]]; // mostrar todos los siguientes niveles
+            [[fallthrough]];// mostrar todos los siguientes niveles
         case INFO:
             std::cout << "[ INFO ]" << std::endl;
             harl.complain("INFO");
@@ -66,3 +66,12 @@ int main(int argc, char **argv)
 
     return 0;
 }
+
+// switch evalúa una expresión entera (en tu caso, el enum level).
+// case es cada valor posible. Si coincide, se ejecuta ese bloque.
+// default es el bloque que se ejecuta si ningún case coincide.
+// Por defecto, después de ejecutar un case, el switch se “rompe” (termina).
+// Si quieres que siga ejecutando el siguiente case, usas [[fallthrough]]
+// (o simplemente no pones break; en C++98).
+//Permite que un case siga ejecutando el siguiente sin break,
+//útil para “desde este nivel en adelante”.
