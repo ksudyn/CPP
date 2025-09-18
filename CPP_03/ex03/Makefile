@@ -5,31 +5,33 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/09/17 20:05:44 by ksudyn            #+#    #+#              #
-#    Updated: 2025/09/18 14:58:27 by ksudyn           ###   ########.fr        #
+#    Created: 2025/09/18 19:43:14 by ksudyn            #+#    #+#              #
+#    Updated: 2025/09/18 19:44:40 by ksudyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harlFilter
-CC = c++
+NAME = diamondtrap
 
+CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS = main.cpp Fixed.cpp
+SOURCES = main.cpp
+OBJECTS = $(SOURCES:.cpp=.o)
 
-OBJS = $(SRCS:.cpp=.o)
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME): $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
+
+clean:
+	rm -f $(OBJECTS)
+
+fclean: clean
+	rm -f $(NAME)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
-
-clean:
-	rm -rf $(OBJS)
-
-fclean: clean
-	rm -rf $(NAME)
-
 re: fclean all
 
-.PHONY: clean fclean re all
+.PHONY: all clean fclean re

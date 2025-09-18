@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/17 20:11:07 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/18 15:04:58 by ksudyn           ###   ########.fr       */
+/*   Created: 2025/09/18 16:22:30 by ksudyn            #+#    #+#             */
+/*   Updated: 2025/09/18 17:23:42 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,3 +49,30 @@ void Fixed::setRawBits(int const raw)
     this->_fixedPointValue = raw;
 }
 
+Fixed::Fixed(const int n)
+{
+    std::cout << "Int constructor called" << std::endl;
+    _fixedPointValue = n << _fractionalBits; // n * 256
+}
+
+Fixed::Fixed(const float n)
+{
+    std::cout << "Float constructor called" << std::endl;
+    _fixedPointValue = (int)roundf(n * (1 << _fractionalBits));
+}
+
+float Fixed::toFloat(void) const
+{
+    return (float)_fixedPointValue / (1 << _fractionalBits);
+}
+
+int Fixed::toInt(void) const
+{
+    return _fixedPointValue >> _fractionalBits;
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
+{
+    os << fixed.toFloat();
+    return os;
+}

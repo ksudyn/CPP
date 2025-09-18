@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/09/17 20:05:44 by ksudyn            #+#    #+#              #
-#    Updated: 2025/09/18 14:58:27 by ksudyn           ###   ########.fr        #
+#    Created: 2025/09/18 16:18:26 by ksudyn            #+#    #+#              #
+#    Updated: 2025/09/18 17:33:11 by ksudyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harlFilter
+NAME = harlFilter_1
 CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
@@ -33,3 +33,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: clean fclean re all
+
