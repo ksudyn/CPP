@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/18 17:39:57 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/19 18:11:24 by ksudyn           ###   ########.fr       */
+/*   Created: 2025/09/19 18:19:44 by ksudyn            #+#    #+#             */
+/*   Updated: 2025/09/19 18:55:35 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -240,28 +240,3 @@ const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
     else
         return b;
 }
-// Qué hacen: devuelven referencia al menor/mayor (dos versiones: const y no-const).
-// Por qué referencias: evita copias innecesarias y permite usar el objeto resultante directamente.
-// Importante: las versiones const aceptan y devuelven const Fixed&
-
-
-// Notas finales / consejos prácticos
-// Las operaciones + y - son sencillas porque la escala es la misma en los raw.
-// En * y / hay que corregir la escala (multiplicar produce una escala doble;
-// dividir requiere desplazar antes para mantener precisión).
-
-// Uso de long long en multiplicación/división para evitar overflow temporal y pérdida de precisión.
-
-// toInt() usa división entera para truncar la parte fraccionaria
-// (esto coincide con los outputs típicos del enunciado).
-
-// Si prefieres redondear al entero más cercano, usa roundf(toFloat()) en su lugar.
-
-// getRawBits() imprime un mensaje:
-// esto es útil para ver cuándo se está accediendo a la representación interna
-// (lo usan los tests del proyecto).
-
-// Si quieres una implementación más simple (menos eficiente)
-// puedes implementar + - * / haciendo return Fixed(this->toFloat() op other.toFloat());
-// es más directo pero hace conversiones float->raw repetidas
-// (y pierde la enseñanza de cómo hacerlo con aritmética entera)

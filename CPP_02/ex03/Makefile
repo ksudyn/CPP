@@ -5,33 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/09/18 19:43:06 by ksudyn            #+#    #+#              #
-#    Updated: 2025/09/19 19:56:42 by ksudyn           ###   ########.fr        #
+#    Created: 2025/09/19 18:13:49 by ksudyn            #+#    #+#              #
+#    Updated: 2025/09/19 18:48:18 by ksudyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
-
+NAME = harlFilter_3
 CC = c++
+
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SOURCES = main.cpp ClapTrap.cpp
-OBJECTS = $(SOURCES:.cpp=.o)
+SRCS = main.cpp Fixed.cpp Point.cpp bsq.cpp
 
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(NAME): $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
-
-clean:
-	rm -f $(OBJECTS)
-
-fclean: clean
-	rm -f $(NAME)
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+
+clean:
+	rm -rf $(OBJS)
+
+fclean: clean
+	rm -rf $(NAME)
+
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: clean fclean re all

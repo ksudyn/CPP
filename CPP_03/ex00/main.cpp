@@ -5,23 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/18 17:42:49 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/19 17:02:02 by ksudyn           ###   ########.fr       */
+/*   Created: 2025/09/19 19:55:43 by ksudyn            #+#    #+#             */
+/*   Updated: 2025/09/19 19:55:44 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-
-int main(void)
-{
-    Fixed a;
-    Fixed const b(Fixed(5.05f) * Fixed(2));
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << Fixed::max(a, b) << std::endl;
-    return (0);
-}
