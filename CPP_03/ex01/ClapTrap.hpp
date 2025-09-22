@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 19:56:18 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/22 17:53:50 by ksudyn           ###   ########.fr       */
+/*   Created: 2025/09/22 19:05:40 by ksudyn            #+#    #+#             */
+/*   Updated: 2025/09/22 19:10:42 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@
 
 class ClapTrap
 {
-    private:
+    protected:
         std::string Name;// Nombre del ClapTrap
         int HitPoints;// Vida / salud actual
         int EnergyPoints;// Energía disponible para acciones
         int AttackDamage;// Daño que causa al atacar
+
     public:
         ClapTrap();
         ClapTrap(std::string name);
