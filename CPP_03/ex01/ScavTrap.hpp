@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 19:07:15 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/22 20:13:41 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/09/23 16:51:51 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,14 @@ class ScavTrap : public ClapTrap
 // Y en tus tests debes demostrar:
 // Que cuando se crea un ScavTrap, primero se construye un ClapTrap (constructor base).
 // Que al destruir un ScavTrap, primero se destruye el propio ScavTrap y después el ClapTrap.
+
+// Si la clase hija no define su propia versión de un método, se usa directamente la versión del padre.
+// Solo hace falta “sobrescribir” (volver a definir)
+// cuando quieres que se comporte distinto o imprima mensajes distintos
+
+// En ex01:
+// Obligatorio redefinir attack() (mensaje distinto).
+// Obligatorio añadir guardGate().
+// El resto (takeDamage, beRepaired) se heredan y funcionan igual que en ClapTrap
 
 #endif

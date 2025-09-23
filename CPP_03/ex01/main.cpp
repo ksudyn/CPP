@@ -6,13 +6,14 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 19:05:58 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/22 19:52:38 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/09/23 16:55:59 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-int main() {
+int main()
+{
     ScavTrap scav("SC4V");
     scav.attack("enemy");
     scav.takeDamage(30);
@@ -21,7 +22,8 @@ int main() {
 }
 
 
-// int main() {
+// int main()
+// {
 //     std::cout << "=== Creando un ScavTrap con constructor por defecto ===" << std::endl;
 //     ScavTrap s1; // usa constructor por defecto (KIKI)
 
@@ -47,7 +49,8 @@ int main() {
 //     s1 = s3; // operador de asignación, copia los datos de s3 a s1
 
 //     std::cout << "\n=== Gastando energía hasta que no pueda atacar ===" << std::endl;
-//     for (int i = 0; i < 55; i++) {
+//     for (int i = 0; i < 55; i++)
+//     {
 //         s2.attack("Dummy target"); // después de 50 ataques debería quedarse sin energía
 //     }
 

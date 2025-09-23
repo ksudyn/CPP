@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 19:08:37 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/23 16:47:00 by ksudyn           ###   ########.fr       */
+/*   Created: 2025/09/23 17:01:40 by ksudyn            #+#    #+#             */
+/*   Updated: 2025/09/23 17:01:42 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,3 +75,4 @@ void ScavTrap::guardGate()
 {
     std::cout << "ScavTrap " << Name << " is now in Gate keeper mode!" << std::endl;
 }
+

@@ -6,16 +6,16 @@
 #    By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/18 19:43:12 by ksudyn            #+#    #+#              #
-#    Updated: 2025/09/18 19:44:21 by ksudyn           ###   ########.fr        #
+#    Updated: 2025/09/23 17:23:00 by ksudyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fragtrap
+NAME = Fragtrap
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SOURCES = main.cpp
+SOURCES = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 %.o: %.cpp
