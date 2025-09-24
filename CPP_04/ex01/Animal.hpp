@@ -1,0 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/24 20:23:37 by ksudyn            #+#    #+#             */
+/*   Updated: 2025/09/24 20:29:14 by ksudyn           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef ANIMAL_H
+#define ANIMAL_H
+
+#include "iostream"
+
+class Animal
+{
+    protected:
+        std::string type;
+    public:
+            // Constructores y destructor
+        Animal();                                // constructor por defecto
+        Animal(const std::string &typ);          // constructor con tipo
+        Animal(const Animal &other);             // constructor copia
+        Animal &operator=(const Animal &other);  // asignación
+        virtual ~Animal();                       // destructor virtual para polimorfismo
+
+        // Métodos
+        std::string getType() const;             // getter del tipo
+        //Se pone const porque Este método no va a modificar ningún atributo del objeto
+        virtual void makeSound() const = 0;          // método virtual puro
+        // Ya no se necesita la implementacion de esta funcion
+        // Porque ahora makeSound() es virtual pura (= 0) en la clase abstracta.
+        // Animal no tiene implementación, solo declara la función
+    };
+
+#endif

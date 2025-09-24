@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 17:03:04 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/24 18:50:33 by ksudyn           ###   ########.fr       */
+/*   Created: 2025/09/24 17:52:43 by ksudyn            #+#    #+#             */
+/*   Updated: 2025/09/24 18:00:34 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef WRONGANIMAL_H
+#define WRONGANIMAL_H
 
-#include "ClapTrap.hpp"
-#include <iostream>
+#include "iostream"
 
-class FragTrap : public ClapTrap
+class WrongAnimal
 {
-    private:
-
+    protected:
+        std::string type;
     public:
-        FragTrap();
-        FragTrap(std::string name); // constructor
-        FragTrap(const FragTrap& other);
-        FragTrap& operator=(const FragTrap& other);
-        ~FragTrap(); // destructor        
+        WrongAnimal();
+        WrongAnimal(const WrongAnimal& other);
+        WrongAnimal& operator=(const WrongAnimal& other);
+        ~WrongAnimal();
 
-        void highFivesGuys(void); // nuevo método
+        void makeSound() const; // NO es virtual
+        std::string getType() const;
 };
+
 
 #endif

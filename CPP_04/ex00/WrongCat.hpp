@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 17:03:04 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/24 18:50:33 by ksudyn           ###   ########.fr       */
+/*   Created: 2025/09/24 17:53:02 by ksudyn            #+#    #+#             */
+/*   Updated: 2025/09/24 18:03:12 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef WRONGCAT_H
+#define WRONGCAT_H
 
-#include "ClapTrap.hpp"
-#include <iostream>
+#include "WrongAnimal.hpp"
 
-class FragTrap : public ClapTrap
+class WrongCat : public WrongAnimal
 {
     private:
 
     public:
-        FragTrap();
-        FragTrap(std::string name); // constructor
-        FragTrap(const FragTrap& other);
-        FragTrap& operator=(const FragTrap& other);
-        ~FragTrap(); // destructor        
+        WrongCat();
+        WrongCat(const WrongCat& other);
+        WrongCat& operator=(const WrongCat& other);
+        ~WrongCat();
 
-        void highFivesGuys(void); // nuevo método
+        void makeSound() const; // sigue siendo NO virtual
 };
 
-#endif
+#endif 
