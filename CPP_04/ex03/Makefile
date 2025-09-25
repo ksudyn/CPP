@@ -6,7 +6,7 @@
 #    By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 19:51:47 by ksudyn            #+#    #+#              #
-#    Updated: 2025/09/25 17:25:41 by ksudyn           ###   ########.fr        #
+#    Updated: 2025/09/25 18:55:24 by ksudyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = Animals_3
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SOURCES = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp
+SOURCES = main.cpp 
 OBJECTS = $(SOURCES:.cpp=.o)
 
 %.o: %.cpp
