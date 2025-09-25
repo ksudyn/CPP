@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 20:23:26 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/25 17:03:42 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/09/24 20:28:18 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Animal::Animal() : type("Animal")
 {
-	//std::cout << "Animal default constructor called." << std::endl;
+	std::cout << "Animal default constructor called." << std::endl;
 }
 
 Animal::Animal(const std::string &typ) : type(typ)
@@ -24,7 +24,7 @@ Animal::Animal(const std::string &typ) : type(typ)
 
 Animal::~Animal()
 {
-    //std::cout << "Animal " << type << " Destructor " << std::endl;
+    std::cout << "Animal " << type << " Destructor " << std::endl;
 }
 
 Animal& Animal::operator=(const Animal& other)
@@ -43,16 +43,11 @@ Animal& Animal::operator=(const Animal& other)
 
 Animal::Animal(const Animal& other)
 {  
-    //std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
 std::string Animal::getType() const
 {
     return (this->type);
-}
-
-void Animal::makeSound() const
-{
-	std::cout << "Animal" << Animal::getType() << ": Some generic animal sound" << std::endl;
 }
