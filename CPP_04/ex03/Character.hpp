@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 19:48:52 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/25 20:06:09 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/09/26 18:59:05 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,17 @@
 # define CHARACTER_HPP
 
 # include <string>
+#include "iostream"
+# include "ICharacter.hpp"
+#include "AMateria.hpp"
 
-class Character
+class AMateria;
+
+class Character : public ICharacter
 {
     private:
-
+        std::string name;
+	    AMateria* materias[4];
     public:
         Character();
         ~Character();
@@ -27,6 +33,10 @@ class Character
         Character(const Character& other);
         Character& operator=(const Character& other);
 
+        std::string const & getName() const;
+        void equip(AMateria* m);
+        void unequip(int idx);
+        void use(int idx, ICharacter& target);
 };
 
 

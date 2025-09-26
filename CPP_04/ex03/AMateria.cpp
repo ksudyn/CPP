@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 19:48:24 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/25 20:33:31 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/09/26 18:12:39 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ std::string const & AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-    void;
+    (void)target;// así evitas warning si no usas target
 }

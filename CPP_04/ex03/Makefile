@@ -6,16 +6,18 @@
 #    By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 19:51:47 by ksudyn            #+#    #+#              #
-#    Updated: 2025/09/25 18:55:24 by ksudyn           ###   ########.fr        #
+#    Updated: 2025/09/26 16:48:04 by ksudyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animals_3
+NAME = materia
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SOURCES = main.cpp 
+SOURCES = main.cpp \
+      	AMateria.cpp Ice.cpp Cure.cpp \
+      	Character.cpp MateriaSource.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 %.o: %.cpp
