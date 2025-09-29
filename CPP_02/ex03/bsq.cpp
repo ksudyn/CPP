@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 18:21:39 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/19 19:11:46 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/09/29 20:18:49 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,14 @@
 // Función auxiliar para calcular área del triángulo (en valor absoluto)
 static float triangleArea(Point const &p1, Point const &p2, Point const &p3)
 {
-    Fixed term1 = p1.getX() * (p2.getY() - p3.getY());
-    Fixed term2 = p2.getX() * (p3.getY() - p1.getY());
-    Fixed term3 = p3.getX() * (p1.getY() - p2.getY());
+    Fixed term1;
+    Fixed term2;
+    Fixed term3;
+    Fixed area;
+    
+    term1 = p1.getX() * (p2.getY() - p3.getY());
+    term2 = p2.getX() * (p3.getY() - p1.getY());
+    term3 = p3.getX() * (p1.getY() - p2.getY());
 
     Fixed area = (term1 + term2 + term3);
     if (area < Fixed(0))
@@ -32,10 +37,15 @@ static float triangleArea(Point const &p1, Point const &p2, Point const &p3)
 
 bool bsp(Point const a, Point const b, Point const c, Point const p)
 {
-    float ABC = triangleArea(a, b, c);
-    float PBC = triangleArea(p, b, c);
-    float APC = triangleArea(a, p, c);
-    float ABP = triangleArea(a, b, p);
+    float ABC;
+    float PBC;
+    float APC;
+    float ABP;
+    
+    ABC = triangleArea(a, b, c);
+    PBC = triangleArea(p, b, c);
+    APC = triangleArea(a, p, c);
+    ABP = triangleArea(a, b, p);
 
     if (PBC + APC + ABP > ABC) // fuera
         return false;
