@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:12:04 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/23 19:36:39 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/09/30 20:53:45 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ DiamondTrap:: DiamondTrap() : ClapTrap() , ScavTrap() , FragTrap()
 }
 
 
-DiamondTrap::DiamondTrap(std::string name ): ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap(std::string name ): ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
 {
     this->name = name;
     HitPoints = FragTrap::HitPoints;    // 100

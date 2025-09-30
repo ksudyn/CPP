@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:11:31 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/23 19:36:12 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/09/30 20:53:30 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "ScavTrap.hpp"
 #include <iostream>
 
-class DiamondTrap : public FragTrap, public ScavTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
     private:
         std::string name; // propio de DiamondTrap (mismo nombre que en ClapTrap)
