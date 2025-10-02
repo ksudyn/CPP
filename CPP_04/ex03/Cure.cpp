@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 19:44:04 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/26 17:42:30 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 17:31:04 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,12 @@ Cure::~Cure()
 Cure::Cure(const Cure& other) : AMateria(other)
 {
     std::cout << "Cure Constructor called" << std::endl;
-    *this = other;
 }
 
 Cure& Cure::operator=(const Cure& other)
 {
     std::cout << "Copy Cure Assigment Operator called" << std::endl;
-    this->type = other.type;
+    AMateria::operator=(other);
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 19:47:53 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/26 19:20:44 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 17:30:18 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class MateriaSource : public IMateriaSource
 {
     private:
-        AMateria* materias[4];
+        AMateria* _materias[4];
     public:
         MateriaSource();
         ~MateriaSource();

@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 19:48:52 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/26 18:59:05 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 17:31:17 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class Character : public ICharacter
         Character& operator=(const Character& other);
 
         std::string const & getName() const;
+        AMateria* getMateria(int idx);
         void equip(AMateria* m);
         void unequip(int idx);
         void use(int idx, ICharacter& target);

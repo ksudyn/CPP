@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 19:45:06 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/26 20:17:22 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 17:30:30 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ MateriaSource::MateriaSource( void )
 {
 	std::cout << "MateriaSource Constructor" << std::endl;
     for (int i = 0; i < 4; i++)
-        materias[i] = NULL;
+        _materias[i] = NULL;
 }
 
 MateriaSource::~MateriaSource()
@@ -24,23 +24,36 @@ MateriaSource::~MateriaSource()
 	std::cout << "MateriaSource Destructor" << std::endl;
     for (int i = 0; i < 4; i++)
     {
-        if (materias[i]) delete materias[i];
+        if (_materias[i])
+            delete _materias[i];
     }
 }
 
 MateriaSource::MateriaSource( const MateriaSource& other )
 {
 	std::cout << "Copy MateriaSource Constructor called" << std::endl;
-	*this = other;
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (other._materias[i])
+		{
+			this->_materias[i] = other._materias[i]->clone();
+		}
+		else
+			this->_materias[i] = 0;
+		
+	}
 }
 
 void MateriaSource::learnMateria(AMateria* m)
 {
+    if(!m)
+        return;
     for (int i = 0; i < 4; i++)
     {
-        if (!materias[i])
+        if (this->_materias[i] == 0)
         {
-            materias[i] = m->clone(); // guardas copia
+            this->_materias[i] = m->clone(); // guardas copia
+            delete m;
             return;
         }
     }
@@ -48,11 +61,13 @@ void MateriaSource::learnMateria(AMateria* m)
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-    for (int i=0;i<4;i++)
-    {
-        if (materias[i] && materias[i]->getType() == type)
-            return materias[i]->clone();
-    }
+    for (int i = 0; i < 4; i++)
+	{
+		if (this->_materias[i] && this->_materias[i]->getType() == type)
+		{
+			return this->_materias[i]->clone();
+		}
+	}
     return NULL;
 }
 
@@ -62,8 +77,13 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other)
     {
         for (int i = 0; i < 4; i++)
         {
-            if (materias[i]) { delete materias[i]; materias[i] = NULL; }
-            if (other.materias[i]) materias[i] = other.materias[i]->clone();
+            if (_materias[i])
+            {
+                delete _materias[i];
+                _materias[i] = NULL;
+            }
+            if (other._materias[i])
+                _materias[i] = other._materias[i]->clone();
         }
     }
     return *this;

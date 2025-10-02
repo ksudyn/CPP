@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 19:48:24 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/26 18:12:39 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 17:31:41 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 AMateria::AMateria( void )
 {
 	std::cout << "AMateria Constructor" << std::endl;
+	this->type = "NOT";
 }
 
 AMateria::~AMateria()
@@ -31,13 +32,14 @@ AMateria::AMateria( std::string const & type )
 AMateria::AMateria( const AMateria& other )
 {
 	std::cout << "Copy AMateria Constructor called" << std::endl;
-	*this = other;
+	this->type = other.getType();
 }
 
 AMateria& AMateria::operator=( const AMateria& other )
 {
 	std::cout << "Copy AMateria Assigment Operator called" << std::endl;
-	this->type = other.type;
+	if(this != & other)
+		this->type = other.getType();
 	return (*this);
 }
 

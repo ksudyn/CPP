@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 19:44:22 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/26 19:08:36 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 17:31:30 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,35 +24,45 @@ Character::~Character()
     std::cout << "Character destructor" << std::endl;
     for (int i = 0; i < 4; i++)
     {
-        if (materias[i]) delete materias[i];
+        if (materias[i])
+            delete this->materias[i];
     }
 }
 
-Character::Character(std::string n) : name(n)
+Character::Character(std::string nam) : name(nam)
 {
     std::cout << "Character constructor with name" << std::endl;
-    for (int i = 0; i < 4; i++) materias[i] = NULL;
+    for (int i = 0; i < 4; i++)
+        materias[i] = NULL;
 }
 
 Character::Character(const Character& other)
 {
     std::cout << "Copy Character constructor" << std::endl;
-    *this = other;
+    this->name = other.getName();
+	for (int i = 0; i < 4; i++)
+	{
+		if(other.materias[i])
+			this->materias[i] = other.materias[i]->clone();
+		else
+			this->materias[i] = 0;
+	}
 }
 
 Character& Character::operator=(const Character& other)
 {
     if (this != &other)
     {
-        name = other.name;
+        this->name = other.getName();
         for (int i = 0; i < 4; i++)
         {
             if (materias[i])
             {
                 delete materias[i];
-                materias[i]=NULL;
+                materias[i] = NULL;
             }
-            if (other.materias[i]) materias[i] = other.materias[i]->clone();
+            if (other.materias[i])
+                materias[i] = other.materias[i]->clone();
         }
     }
     return *this;
@@ -90,4 +100,11 @@ void Character::use(int idx, ICharacter& target)
         return;
     if (materias[idx])
         materias[idx]->use(target);
+}
+
+AMateria* Character::getMateria(int idx)
+{
+	if (idx < 0 || idx >= 4)
+		return(0);
+	return this->materias[idx];
 }
