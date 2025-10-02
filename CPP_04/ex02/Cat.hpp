@@ -6,19 +6,20 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 20:24:06 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/24 20:24:09 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 15:20:35 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 # define CAT_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
     private:
-    
+		Brain* brain;
     public:
 	    Cat();
 	    ~Cat();
@@ -26,6 +27,7 @@ class Cat : public Animal
     	Cat& operator=(const Cat& other);
 
         void makeSound() const;
+		void searchBrain() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 20:23:37 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/25 15:50:59 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 15:34:24 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Animal
         std::string getType() const;             // getter del tipo
         //Se pone const porque Este método no va a modificar ningún atributo del objeto
         virtual void makeSound() const;          // método virtual puro
+        virtual void searchBrain() const;
     };
 
 #endif

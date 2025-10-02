@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 20:23:26 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/25 17:03:42 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 15:34:09 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,9 @@ std::string Animal::getType() const
 void Animal::makeSound() const
 {
 	std::cout << "Animal" << Animal::getType() << ": Some generic animal sound" << std::endl;
+}
+
+void Animal::searchBrain()const
+{
+	std::cout << Animal::getType() << " : " << "No brain!" << std::endl;
 }

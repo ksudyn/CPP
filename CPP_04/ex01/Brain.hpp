@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 16:02:20 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/25 16:18:37 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 15:36:05 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ class Brain
         Brain& operator=(const Brain& other);
         ~Brain();
 
-        void setIdea(int index, const std::string& idea);
-        std::string getIdea(int index) const;
 };
 
 

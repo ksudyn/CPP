@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 20:24:19 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/25 17:02:32 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 15:41:46 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,22 +57,7 @@ void Dog::makeSound() const
     std::cout << type << ": Woof!" << std::endl;
 }
 
-
-void Dog::setBrainIdea(int index, const std::string& idea)
+void Dog::searchBrain()const
 {
-    brain->setIdea(index, idea);
+	std::cout << this->getType() << " brain: " << brain << std::endl;
 }
-
-std::string Dog::getBrainIdea(int index) const
-{
-    return brain->getIdea(index);
-}
-// Son “puentes”
-// para que desde fuera puedas leer o escribir ideas del Brain del Dog
-// sin exponer el Brain directamente.
-
-// Así puedes hacer:
-
-// Dog d;
-// d.setBrainIdea(0, "Play");
-// std::cout << d.getBrainIdea(0);

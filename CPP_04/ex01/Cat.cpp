@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 20:23:50 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/25 17:02:17 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 15:40:47 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Cat::Cat() : Animal("Cat"), brain(new Brain())
 
 Cat::~Cat()
 {
-    delete brain;
+    delete this->brain;
     //std::cout << "Cat Destructor called" << std::endl;
     //Libera la memoria del Brain para evitar fugas de memoria.
     //Imprime mensaje
@@ -58,21 +58,7 @@ void Cat::makeSound() const
     std::cout << type << ": Meow!" << std::endl;
 }
 
-void Cat::setBrainIdea(int index, const std::string& idea)
+void Cat::searchBrain()const
 {
-    brain->setIdea(index, idea);
+	std::cout << this->getType() << " brain: " << brain << std::endl;
 }
-
-std::string Cat::getBrainIdea(int index) const
-{
-    return brain->getIdea(index);
-}
-// Son “puentes”
-// para que desde fuera puedas leer o escribir ideas del Brain del Cat
-// sin exponer el Brain directamente.
-
-// Así puedes hacer:
-
-// Cat d;
-// d.setBrainIdea(0, "Play");
-// std::cout << d.getBrainIdea(0);

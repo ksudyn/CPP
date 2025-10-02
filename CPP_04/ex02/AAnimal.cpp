@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/24 20:23:26 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/24 20:28:18 by ksudyn           ###   ########.fr       */
+/*   Created: 2025/10/02 15:14:14 by ksudyn            #+#    #+#             */
+/*   Updated: 2025/10/02 15:15:34 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal() : type("Animal")
+AAnimal::AAnimal() : type("Animal")
 {
 	std::cout << "Animal default constructor called." << std::endl;
 }
 
-Animal::Animal(const std::string &typ) : type(typ)
+AAnimal::AAnimal(const std::string &typ) : type(typ)
 {
     std::cout << "Animal " << typ << " constructor called." << std::endl;
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
     std::cout << "Animal " << type << " Destructor " << std::endl;
 }
 
-Animal& Animal::operator=(const Animal& other)
+AAnimal& AAnimal::operator=(const AAnimal& other)
 {
     std::cout << "Copy assigment operator called" << std::endl;
     if (this != &other)
@@ -41,13 +41,13 @@ Animal& Animal::operator=(const Animal& other)
 // Aquí no pasaría nada grave porque sólo copias un std::string, pero es buena práctica ponerlo
 }
 
-Animal::Animal(const Animal& other)
+AAnimal::AAnimal(const AAnimal& other)
 {  
     std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
-std::string Animal::getType() const
+std::string AAnimal::getType() const
 {
     return (this->type);
 }

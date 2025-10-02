@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 16:02:08 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/25 17:02:03 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 15:37:45 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,17 @@
 Brain::Brain()
 {
     //std::cout << "Brain Constructor" << std::endl;
+    for (size_t i = 0; i < 100; i++)
+		this->ideas[i] = "Default idea";
 }
 
 Brain::Brain(const Brain& other)
 {
     //std::cout << "Brain Copy Constructor" << std::endl;
-    *this = other;
+    for (size_t i = 0; i < 100; i++)
+	{
+		this->ideas[i] = other.ideas[i];
+	}
 }
 
 Brain& Brain::operator=(const Brain& other)
@@ -37,16 +42,3 @@ Brain::~Brain()
 {
     //std::cout << "Brain Destructor" << std::endl;
 }
-
-void Brain::setIdea(int index, const std::string& idea)
-{
-    if (index >= 0 && index < 100)
-        ideas[index] = idea;
-}//Permite guardar una idea en la posición index
-
-std::string Brain::getIdea(int index) const
-{
-    if (index >= 0 && index < 100)
-        return ideas[index];
-    return "";
-}//Devuelve la idea guardada en index.

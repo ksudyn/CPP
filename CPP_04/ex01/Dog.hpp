@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 20:24:33 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/25 16:40:43 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 15:41:23 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ class Dog : public Animal
         Dog& operator=(const Dog& other);
 	
         void makeSound() const;
-        void setBrainIdea(int index, const std::string& idea);
-        std::string getBrainIdea(int index) const;
+        void searchBrain()const;
 };
 
 #endif

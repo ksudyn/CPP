@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 20:24:06 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/09/25 16:22:48 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 15:38:20 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ class Cat : public Animal
     	Cat& operator=(const Cat& other);
 
         void makeSound() const;
-		void setBrainIdea(int index, const std::string& idea);
-    	std::string getBrainIdea(int index) const;
+    	void searchBrain() const;
 };
 
 #endif
