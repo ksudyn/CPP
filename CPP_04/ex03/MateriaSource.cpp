@@ -6,7 +6,7 @@
 /*   By: ksudyn <ksudyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 19:45:06 by ksudyn            #+#    #+#             */
-/*   Updated: 2025/10/02 17:30:30 by ksudyn           ###   ########.fr       */
+/*   Updated: 2025/10/02 17:46:31 by ksudyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void MateriaSource::learnMateria(AMateria* m)
         if (this->_materias[i] == 0)
         {
             this->_materias[i] = m->clone(); // guardas copia
-            delete m;
+            delete m;//IMPORTAMTE
             return;
         }
     }
